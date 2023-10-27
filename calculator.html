@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .main {
+            height: 40vh;
+            width: 190px;
+            background-color: rgb(152, 223, 223);
+            margin: 50px auto; 
+            border-radius: 5px;
+        }
+        .main input {
+            height: 5vh;
+            width: 30px;
+        }
+        .btn {
+            padding: 5px;
+        }
+        .in_out {
+            height: 10vh;
+            margin-bottom: 0;
+        }
+        #result {
+            width: 140px;
+            margin: 7px 5px;
+        }
+        .btn input {
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="in_out">
+            <input type="text" id="result">
+            <input type="button" value="c" onclick="clr()">
+        </div>
+        <div class="btn">
+            <input type="button" value="1" onclick="show('1')">
+            <input type="button" value="2" onclick="show('2')">
+            <input type="button" value="3" onclick="show('3')">
+            <input type="button" value="/" onclick="show('/')">
+        </div>
+        <div class="btn">
+            <input type="button" value="4" onclick="show('4')">
+            <input type="button" value="5" onclick="show('5')">
+            <input type="button" value="6" onclick="show('6')">
+            <input type="button" value="*" onclick="show('*')">
+        </div>
+        <div class="btn">
+            <input type="button" value="7" onclick="show('7')">
+            <input type="button" value="8" onclick="show('8')">
+            <input type="button" value="9" onclick="show('9')">
+            <input type="button" value="-" onclick="show('-')">
+        </div>
+        <div class="btn">
+            <input type="button" value="0" onclick="show('0')">
+            <input type="button" value="." onclick="show('.')">
+            <input type="button" value="=" onclick="cal()">
+            <input type="button" value="+" onclick="show('+')">
+        </div>
+    </div>
+
+    <script>
+        function show(val) {
+            document.getElementById("result").value += val;
+        }
+
+        function cal() {
+            let x = document.getElementById("result").value;
+            let y = eval(x); 
+            document.getElementById("result").value = y;
+        }
+
+        function clr() {
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
