@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        .main {
+            background:linear-gradient(to bottom, #78e0b1, #acd188);
+            height: 50vh;
+            width: 20%;
+            margin-top: 13%;
+            margin-left: 40%;
+            padding:20px;
+            border-radius: 7px;
+            display: block;
+
+        }
+        .main div{
+            margin: 10px;
+        }
+        .main div input{
+            border-radius: 8px;
+        }
+        .main div label{
+            font-weight: 300px;
+            font-size: medium;
+        }
+        .bt{
+            margin-left: 100px;
+        }
+        #sub{
+            margin-left: 60px;
+            padding: 4px;
+             width: 60px;
+             height: 26px;
+              border-radius: 15px;
+            margin-top: 10px;
+            background:linear-gradient(to bottom, #ff6600, #a5159e);
+             font: 1em sans-serif;
+             color: #e9dbdb;
+        }
+        #res{
+            padding: 4px;
+            height: 26px;
+            color: #e3d9d9;
+            width: 60px;
+            margin-left: 12px;
+            margin-top: 10px;
+            border-radius: 15px;
+            background:linear-gradient(to bottom, #ff6600, #35179f);
+            font: 1em sans-serif;
+            
+        }
+        #phone{
+            margin-top: 5px;
+            display: flex;
+        }
+        .phone{
+            display: flex;
+        }
+        .gen{
+            display: flex;
+        }
+        .gen label{
+            margin-left: 8px;
+        }
+        #male{
+           
+        }
+    </style>
+</head>
+<body>
+    <form action="#" onsubmit="return myFun();">
+        <div class="main">
+            <div class="name">
+                <label for="f-name">
+                    First name:
+                </label>
+                <input type="text" id="f-name" required>
+            </div>
+            <div class="name">
+                <label for="l-name">
+                    Last name:
+                </label>
+                <input type="text" id="l-name" required>
+            </div>
+            <div class="dob">
+                <label for="dob">
+                    Date of Birth:
+                </label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="country">
+                <label for="country">
+                    Country:
+                </label>
+                <select id="country" required>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="India">India</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Vietnam">Vietnam</option>
+                </select>
+            </div>
+            <div class="gen">
+                <legend required>Gender</legend>
+                <label for="male">
+                    Male
+                </label>
+                <input type="radio" id="male" value="Male" name="gender" required>
+                <label for="female">
+                    Female
+                </label>
+                <input type="radio" id="female" value="Female" name="gender" required>
+            </div>
+            <div class="prof">
+                <label for="prof">
+                    Profession
+                </label>
+                <input type="text" id="prof" required>
+            </div>
+            <div class="email">
+                <label for="email">
+                    Email
+                </label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="phone">
+                <label for="phone">Mobile number:</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="btn bt">
+                <input type="submit" id="sub" value="submit">
+                <input type="reset" id="res" value="reset">
+            </div>
+        </div>
+    </form>
+    <script>
+        function myFun() {
+            const fName = document.getElementById('f-name').value;
+            const lName = document.getElementById('l-name').value;
+            const dob = document.getElementById('dob').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const prof = document.getElementById('prof').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const country = document.getElementById('country').value;
+
+           
+            if (!fName || !lName || !dob || !phone || !email || !prof || !gender || !country) {
+                alert("Please fill in all the fields.");
+                return false; 
+            }
+
+           
+            alert("First name: " + fName +
+                "\nLast name: " + lName +
+                "\nDate of Birth: " + dob +
+                "\nPhone: " + phone +
+                "\nEmail: " + email +
+                "\nProfession: " + prof +
+                "\nGender: " + gender.value +
+                "\nCountry: " + country);
+
+            return true; 
+        }
+    </script>
+</body>
+</html>
